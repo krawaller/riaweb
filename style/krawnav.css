@@ -1,0 +1,41 @@
+ul.krawnav {
+	list-style-type: none;
+	border-bottom: 1px solid black;
+	height: 20px;
+	margin-left: 0;
+	margin-right: 0;
+	margin-top: 2em;
+}
+ul.krawnav li {
+	margin-left: 10px;
+	margin-right: 0;
+	float: left;
+	position: relative;
+}
+ul.krawnav a {
+	display: block;
+	border: 1px solid black;
+	border-bottom: none;
+	height: 19px;
+	position: relative;
+	background-color: gray;
+	text-decoration: none;
+	padding-left: 5px;
+	padding-right: 5px;
+	color: black;
+	font-style: italic;
+}
+ul.krawnav a:hover {
+	background-color: #DDD;
+}
+ul.krawnav a.krawlinkactive, ul.krawnav a.krawlinkactive:hover {
+	top: 1px;
+	background-color: white;
+}
+div.krawsection {
+	display: none;
+	padding-top: 10px;
+}
+div.krawsectionactive {
+	display: block;
+}
