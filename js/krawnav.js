@@ -21,6 +21,22 @@ function krawnav(frag,depth){
 	frag.find(".krawsection:first").before(html);
 }
 
+function makesectionchoise(sec){
+	sec.siblings(".krawsection").removeClass("krawsectionactive");
+	sec.addClass("krawsectionactive");
+	var link = $("#"+sec.attr("id")+"link");
+	link.parent().parent().find(".krawlinkactive").removeClass("krawlinkactive");
+	link.addClass("krawlinkactive");
+}
+
+function bubblefromel(el){
+	sec = $(el).closest(".krawsection");
+	if (sec.length){
+		makesectionchoise(sec);
+		bubblefromel(sec.parent());
+	}
+}
+
 $(function(){
 	krawnav("#main");
 	$("body").on("click",".krawlink",function(e){
@@ -34,11 +50,11 @@ $(function(){
 		if ($el.hasClass("krawlinkactive")){
 			return;
 		}
-		
-		ul.find(".krawlinkactive").removeClass("krawlinkactive");
-		$el.addClass("krawlinkactive");
-		
-		sections.removeClass("krawsectionactive");
-		targetsection.addClass("krawsectionactive");
+		makesectionchoise(targetsection);
+	});
+	var my_host = window.location.host;
+	$("body").on("click","a[href^='#']",function(e){
+		bubblefromel($(e.currentTarget.hash));
+		return false;
 	});
 });
