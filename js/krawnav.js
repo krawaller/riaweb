@@ -1,4 +1,8 @@
 var id = 0;
+function makeid(text){
+	text = encodeURIComponent("_"+text.replace(/\W/g,""));
+	return text;
+}
 
 function krawnav(frag,depth){
 	frag = $(frag || "body");
@@ -9,12 +13,12 @@ function krawnav(frag,depth){
 		var me = $(el),
 			next = i < headings.length-1 ? $(headings[i+1]) : me.nextAll("h"+(depth-1)+":first"),
 			section = me.nextUntil(next).andSelf();
-		section.wrapAll("<div class='krawsection krawsection"+navid+(i?"":" krawsectionactive")+"' id='krawnav"+(id++)+"'>");
+		section.wrapAll("<div class='krawsection krawsection"+navid+(i?"":" krawsectionactive")+"' id='"+makeid($(headings[i]).text())+"'>");
 	});
 	var html = "<ul class='krawnav' id='krawsection"+navid+"'>"
 	frag.find(".krawsection").each(function(i,el){
 		var $el = $(el);
-		html += "<li><a class='krawlink"+(i?"":" krawlinkactive")+"' id='"+el.id+"link'>"+$(headings[i]).text()+"</a></li>"
+		html += "<li><a href='#"+el.id+"' class='krawlink"+(i?"":" krawlinkactive")+"' id='"+el.id+"link'>"+$(headings[i]).text()+"</a></li>"
 		krawnav(el,depth+1);
 	});
 	html+="</ul>";
@@ -37,24 +41,16 @@ function bubblefromel(el){
 	}
 }
 
+var currenthash = ""
+function checkHash(){
+	if (window.location.hash !== currenthash){
+		bubblefromel(window.location.hash)
+	}
+}
+
+setInterval(checkHash,100);
+
 $(function(){
 	krawnav("#main");
-	$("body").on("click",".krawlink",function(e){
-		var $el = $(this),
-			navid = this.id,
-			navpartid = "#"+navid.substr(0,navid.length-4),
-			ul = $el.parent().parent(),
-			secid = ul.attr("id"),
-			sections = $("body").find("."+secid),
-			targetsection = sections.filter(navpartid);
-		if ($el.hasClass("krawlinkactive")){
-			return;
-		}
-		makesectionchoise(targetsection);
-	});
-	var my_host = window.location.host;
-	$("body").on("click","a[href^='#']",function(e){
-		bubblefromel($(e.currentTarget.hash));
-		return false;
-	});
 });
+
