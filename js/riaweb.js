@@ -10,7 +10,13 @@ $(function(){
 	$("a").each(function(i,el){
 		var link = $(el);
 		if (!link.hasClass("krawlink")){
-			link.addClass("doclink").addClass(link.attr("href").substr(0,1) === "#" ? "local" : "external");
+			link.addClass("doclink");
+			if (link.attr("href").substr(0,1) === "#"){
+				link.addClass("local")
+			} else {
+				link.addClass("external").attr("target","_blank");
+			}
+			
 		}
 	});
 	

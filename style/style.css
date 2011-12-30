@@ -47,11 +47,12 @@ img.book {
 	margin-left: 4em;
 }
 
-img.logo {
+img.logo, div.date {
 	float: right;
 	margin-right: 1em;
 	max-width: 150px;
 	margin-top: -4em;
+	margin-left: 5px;
 }
 
 #mainhead {
@@ -92,6 +93,26 @@ padding-left: 2px;
 padding-right: 2px;
 position: relative;
 border-image: initial;
+}
+
+div.date {
+	background-color: #555;
+	color: white;
+	font-weight: bold;
+	font-size: 2em;
+	width: 200px;
+	height: 50px;
+	padding-top: 5px;
+	text-align: center;
+	margin-top: -2em;
+	border-radius: 7px;
+}
+
+.date > span {
+	display: block;
+	font-weight: normal;
+	padding-top: 5px;
+	font-size: 0.5em;
 }
 
 .bg {
