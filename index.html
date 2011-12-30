@@ -109,11 +109,12 @@ Hello World! I detta första steg ska du kratta manegen för kursen genom att...
 					1: planering
 				</h2>
 				<p>
-Nu ska du, i samråd med lärare, planera inför kursens genomförande! I och med det så har du ett antal olika beslut att fatta och detaljer att hamra ned, på tre olika områden:
+Nu ska du, i samråd med lärare, planera inför kursens genomförande! I och med det så har du ett antal olika beslut att fatta och detaljer att hamra ned, på fyra olika områden:
 				</p>
 <ul><li><strong>Recept</strong> - Vad för program skall du bygga?</li>
 <li><strong>Ingredienser</strong> - Vilka <a href="#aspekter">tekniker och bibliotek</a> vill du använda?</li>
 <li><strong>Tillagning</strong> - Hur skall allt vävas ihop?</li>
+<li><strong>Servering</strong> - Hur skall din applikation tillgängliggöras?</li>
 </ul>
 <p>
 När du genomfört planeringen skall du skriva ett nytt blogginlägg där du för varje rubrik redogör för dina val &amp; dina tankar.
@@ -140,6 +141,10 @@ När du genomfört planeringen skall du skriva ett nytt blogginlägg där du fö
 </ul>
 <p>dsa öasök daölsd kasöd a</p>
 <p>Oavsett hur din planering ser ut, så är det viktiga att den ger dig en god uppfattning om hur applikationen skall struktureras och hur de olika delarna kommer prata med varandra.</p>
+<h3>Servering</h3>
+<p>Bla bla. Om du använder <a href="#node">Node</a> så måste ha lösning för det. Annars smidigast att använda <a href="#git">Github</a> genom att nyttja deras project pages-funktionalitet.</p>
+
+
 				<h2>2: Implementering</h2>
 				<p>koda koda koda!</p>
 				<h2 id="kollab">3: Kollaborering</h2>
@@ -164,7 +169,7 @@ En av dem skall dessutom senare bli fokus för din <a href="#deepdive">fördjupn
 <p>Koden till applikationen du kommer bygga ska versionshanteras med hjälp av Git. Den i JavaScriptvärlden vanligaste providern av Gitrepositorier online är Github, som också är den lösning vi använder i kursen.</p>
 <p>Tjuvkika gärna på <a href="http://voyager.lnu.se/tekinet/kurser/dtt/2DV407/index.php?sida=html%2F2011%2Fresurser%2Fgit">denna sida</a> i förra årets kurswebb, där flertalet tutorials och resurser finns länkade.</p>
 <p>Redan i <a href="#intro">första kurssteget</a> skall du <strong>installera Git</strong> (om du inte redan har det), <strong>registrera dig</strong> på Github, och <strong>skapa ett repositorium</strong> för din kursapp.</p>
-<p>Därefter kommer du löpande <strong>pusha</strong> upp din kod till Github, allteftersom du arbetar på din applikation. Om du vill fördjupa dig lite mer i Gitanvändning så kanske du också kommer använda <strong>taggar</strong> för att markera milstolpar i projektet, och <strong>branches</strong> för att utveckla specifik funktionalitet som sedan <strong>mergas</strong> tillbaka in i huvudbranchen ("master").</p>
+<p>Därefter kommer du löpande att <strong>committa</strong> dina ändringar lokalt för att sedan <strong>pusha</strong> upp din kod till Github. Om du vill fördjupa dig lite mer i Gitanvändning så kanske du också kommer använda <strong>taggar</strong> för att markera milstolpar i projektet, och <strong>branches</strong> för att utveckla specifik funktionalitet som sedan <strong>mergas</strong> tillbaka in i huvudbranchen ("master").</p>
 <p>I kursens <a href="#kollab">fjärde steg</a>, efter att applikationerna är färdigställda, skall ni få testa på Githubs verkliga styrka; möjlighet till <strong>kollaboration</strong>! Här är tanken att ni skall sätta er in i en kurskamrats projekt, <strong>forka</strong> dennes repositorium, göra en liten vidareutveckling/bugfix, och sedan skicka en <strong>pull request</strong>. På samma sätt kommer du själv också få ta ställning till pull requests från kurskamrater, och <strong>merga</strong> in dessa i din kod. Om du tycker ändringen håller måttet, vill säga...</p>
 <p>Målet med Githubanvändningen i kursen är först och främst att ni skall bli någorlunda <strong>vana användare</strong> av det, då Github har blivit mer eller mindre en standard vid större JavaScriptprojekt. Men framför allt hoppas vi också på att ni ser nyttan av det - både vad gäller den smidiga <strong>versionshanteringen</strong>, den enkla <strong>molnbackupen</strong>, och <strong>kollaborationsmöjligheterna</strong>.</p>
 <p>Om Github ger dig mersmak så rekommenderas du att göra din <a href="#deepdive">fördjupning</a> om Github. Här har du en ypperlig chans att grotta ned dig ytterligare i detaljerna!</p>
@@ -213,7 +218,7 @@ En av dem skall dessutom senare bli fokus för din <a href="#deepdive">fördjupn
 				<h3>CoffeeScript</h3>
 <img class="logo" src="img/coffeescript_logo.png" />
 <p>CoffeeScript waah!</p>
-				<h3>Node.js</h3>
+				<h3 id="node">Node.js</h3>
 <img class="logo" src="img/node.png" />
 				<p>
 dlsöa dsa das
@@ -221,8 +226,18 @@ dlsöa dsa das
 				<h3 id="c9">Cloud9</h3>
 <img class="logo" src="img/cloud9ide.png" />
 				<p>
-moo moo
+moo moo <a href="http://c9.io/">hemsida</a>
 				</p>
+				<h3>NoSQL</h3>
+<img class="logo" src="img/couchdb-logo.png"/> <img class="logo" src="img/mongodb-logo.png"/>
+<p>bla bla ny paradigm bla bla, bort från SQL och tables, yidder yidder.</p>
+<p>De två stora är...</p>
+<ul>
+	<li><a href="http://couchdb.apache.org/">CouchDB</a>, ett projekt som sorterar under <a href="http://www.apache.org/">Apache Software Foundation</a>. Ett utmärkt sätt att komma igång är att kika på <a href="http://guide.couchdb.org/">onlineboken här</a> eller <a href="http://voyager.lnu.se/tekinet/kurser/dtt/2DV407/index.php?sida=html%2F2011%2Fresurser%2Fcouchdb">Couch-sidan</a> på förra årets kurswebb.</li>
+	<li> och <a href="http://www.mongodb.org/">MongoDB</a> wee moo.</li>
+</ul>
+				
+				
 			</div>
 			<div id="footer">
 				wuuu
