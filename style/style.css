@@ -9,6 +9,7 @@ body {
 	line-height: 1.5em;
 	padding-top: 0;
 	margin-top: 0;
+	
 }
 #wrapper {
 	width: 800px;
@@ -18,8 +19,8 @@ body {
 	background-color: white;
 	min-height: 100%;
 	padding-top: 2em;
-	border-left: 5px solid black;
-	border-right: 5px solid black;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
 	z-index: 1;
 }
 
@@ -50,4 +51,54 @@ img.logo {
 	float: right;
 	margin-right: 1em;
 	max-width: 150px;
+	margin-top: -4em;
+}
+
+#mainhead {
+	font-weight: bold;
+	font-size: 3em;
+	padding-left: 1em;
+}
+
+a.local {
+	color: red;
+}
+
+a.external {
+	color: green;
+}
+
+a.doclink {
+text-decoration: none;
+font-size: 0.9em;
+font-weight: bold;
+text-align: center;
+display: inline-block;
+border: 1px solid #EC5;
+background: -moz-linear-gradient(top, #FC0, #FD6);
+background: -webkit-gradient( linear, left top, left bottom, from(#FC0), to(#FD1), color-stop(0.5, #FD3), color-stop(0.5, #FD6) );
+background: -moz-linear-gradient(top, #FC0, #FD6);
+margin: 0 0 3px 0;
+text-shadow: 0 1px 0px rgba(255, 255, 255, 0.4);
+-webkit-background-origin: padding-box;
+-moz-background-origin: padding-box;
+background-origin: padding-box;
+-webkit-background-clip: border-box;
+-moz-background-clip: border-box;
+background-clip: border-box;
+border-radius: 4px;
+-moz-border-radius: 4px;
+padding-left: 2px;
+padding-right: 2px;
+position: relative;
+border-image: initial;
+}
+
+.bg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	width: 100%;
+	height: 100%;
 }

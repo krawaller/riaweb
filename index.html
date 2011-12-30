@@ -7,10 +7,6 @@
 		<meta http-equiv="content-type" content="text/html; charset=utf-8">
 		<link rel="stylesheet" href="style/krawnav.css" type="text/css">
 		<link rel="stylesheet" href="style/style.css" type="text/css">
-		<script src="js/jquery-1.7.1-min.js" type="text/javascript">
-</script>
-		<script src="js/krawnav.js" type="text/javascript">
-</script>
 	</head>
 	<body>
 		<div id="wrapper">
@@ -48,7 +44,7 @@ Den officiella kursplanen hittar du <a href="https://prod.kursinfo.lnu.se/utbild
 				<p>
 Yammer bla bla yada.
 				</p>
-				<h2>
+				<h2 id="litt">
 					Litteratur
 				</h2>
 				<p>
@@ -87,9 +83,9 @@ För en översikt över de olika stegens deadlines, se kursens <a href="#planeri
 					0: intro
 				</h2>
 				<p>
-Hello World! I detta första steg ska du...
-<ul>
-	<li><strong>läsa igenom materialet</strong> här på kurswebben. Här finns inte så mycket, men det är viktigt att du snabbt får en översikt över hur arbetsgången kommer se ut!</li>
+Hello World! I detta första steg ska du kratta manegen för kursen genom att...
+<ol>
+	<li><strong>läsa igenom materialet</strong> här på kurswebben. Det är viktigt att du snabbt får en översikt över hur arbetsgången kommer se ut!</li>
 	<li><strong>installera Git</strong>, <strong>registrera dig</strong> på Github och <strong>skapa ett repositorium</strong> för kursen. Se <a href="#git">Githubsektionen</a> för mer info.</li>
 	<li>genomgå John Resigs <a href="http://ejohn.org/apps/learn/">Learning Advanced jQuery</a>, och eventuellt uppdatera/komplettera med kunskaper för att förstå hela resan!</li>
 	<li>sätta upp en <strong>blogg</strong> där du sedermera ska redogöra för dina kursrelaterade förehavanden.</li>
@@ -104,17 +100,46 @@ Hello World! I detta första steg ska du...
 	</li>
 	<li><strong>fixa konto</strong> på <a href="#diskus">Yammer</a>.</li>
 	<li>Lägga ett <strong>meddelande</strong> i presentationstråden på Yammer, där ni också skickar med länk till ert första blogginlägg.</li>
-</ul>
+	<li>Fånga läraren för ett <strong>första Skypesamtal</strong>.</li>
+</ol>
 </p>
 
 				</p>
-				<h2>
+				<h2 id="plan">
 					1: planering
 				</h2>
 				<p>
-					gnuu gnuu gnuu
+Nu ska du, i samråd med lärare, planera inför kursens genomförande! I och med det så har du ett antal olika beslut att fatta och detaljer att hamra ned, på tre olika områden:
 				</p>
+<ul><li><strong>Recept</strong> - Vad för program skall du bygga?</li>
+<li><strong>Ingredienser</strong> - Vilka <a href="#aspekter">tekniker och bibliotek</a> vill du använda?</li>
+<li><strong>Tillagning</strong> - Hur skall allt vävas ihop?</li>
+</ul>
+<p>
+När du genomfört planeringen skall du skriva ett nytt blogginlägg där du för varje rubrik redogör för dina val &amp; dina tankar.
+</p>
+<h3>Recept</h3>
+<p>Vad ska jag bygga? moo moo</p>
+<h3>Ingredienser</h3>
 				<p>Välj vilka <a href="#aspekter">teknologier och aspekter</a> du vill använda i ditt projekt</p>
+				<p>Du skall också redogöra för vilken programvara du tänker använda. Främst vad gäller kodeditor, men också webbläsare &amp; webbläsar-plugins.</p>
+				<p>Om du är nyfiken på att testa något nytt så rekommenderas du att testa <a href="#c9">Cloud9</a>, en editor som körs direkt i webbläsaren.</p>
+
+<p>Mooo</p>
+<h3>Tillagning</h3>
+<p>Det är här dina erfarenheter från <a href="http://voyager.lnu.se/tekinet/kurser/Dtt/DT2380/">OOAD-kursen</a> kommer till nytta! För innan vi sätter igång med implementeringen av applikationen, så ska vi <strong>planera</strong> hur de ingående bitarna skall förhålla sig till varandra.</p>
+<p>Detta planeringssteg har alltid varit en självklarhet inom Software Engineering i stort, men just vid byggandet att JavaScriptapplikationer så finns ingen stark tradition, utan här slarvar man ofta.</p>
+<p>Så vad innefattar då att planera sitt program? Det betyder olika saker för olika människor, men här är några tankar om vad som kan ingå:</p>
+<ul>
+<li>En skiss över de olika <strong>states</strong> som applikationen kan ha, ofta kallad <strong>storyboard</strong>. Exemepelvis startskärm, lista över alla objekt, vy över ett enskilt objekt, formulär för uppdatera/skapa ett objekt, och så vidare.</li>
+<li>En <strong>domänmodell</strong> över de ingående objekten. Vilka objekt är det som ingår i modellen, och hur relaterar de till varandra?</li>
+<li><strong>Sekvensdiagram</strong> över programflödet. Vad händer när användaren klickar på att ta bort ett objekt?</li>
+<li>Ett <strong>Klassdiagram</strong> över de ingående datatyperna. Just traditionella "klasser" används ofta inte i JavaScript, så här gör man istället ofta skisser över de JSON-objekt man skickar fram och tillbaka.</li>
+<li>En <strong>modulskiss</strong>, vilket i JavaScript ofta innebär en karta över ett Singleton-objekt. Vilka funktioner behöver jag i min applikation, och hur skall jag sortera dem?</li>
+<li>Eftersom vi alla ska använda Backbone, så kan du redan nu göra en inventering av de olika <strong>Backboneobjekt</strong> du behöver; views, models, collections och routers.</li>
+</ul>
+<p>dsa öasök daölsd kasöd a</p>
+<p>Oavsett hur din planering ser ut, så är det viktiga att den ger dig en god uppfattning om hur applikationen skall struktureras och hur de olika delarna kommer prata med varandra.</p>
 				<h2>2: Implementering</h2>
 				<p>koda koda koda!</p>
 				<h2 id="kollab">3: Kollaborering</h2>
@@ -127,7 +152,10 @@ Hello World! I detta första steg ska du...
 					Aspekter
 				</h1>
 				<p>
-Kursen tar upp olika bla bla bla. Frivilliga och obligatoriska.
+Kursen tar upp olika bla bla bla. Frivilliga och obligatoriska. I <a href="#plan">planeringssteget</a> ska du välja vilka av dessa du vill använda i kursen.
+				</p>
+				<p>
+En av dem skall dessutom senare bli fokus för din <a href="#deepdive">fördjupning</a>.
 				</p>
 				<h2>Obligatoriska</h2>
 				<p>Dessa bibliotek &amp; utvecklingsaspekter ska ingå i samtliga projekt i kursen.</p>
@@ -137,12 +165,46 @@ Kursen tar upp olika bla bla bla. Frivilliga och obligatoriska.
 <p>Tjuvkika gärna på <a href="http://voyager.lnu.se/tekinet/kurser/dtt/2DV407/index.php?sida=html%2F2011%2Fresurser%2Fgit">denna sida</a> i förra årets kurswebb, där flertalet tutorials och resurser finns länkade.</p>
 <p>Redan i <a href="#intro">första kurssteget</a> skall du <strong>installera Git</strong> (om du inte redan har det), <strong>registrera dig</strong> på Github, och <strong>skapa ett repositorium</strong> för din kursapp.</p>
 <p>Därefter kommer du löpande <strong>pusha</strong> upp din kod till Github, allteftersom du arbetar på din applikation. Om du vill fördjupa dig lite mer i Gitanvändning så kanske du också kommer använda <strong>taggar</strong> för att markera milstolpar i projektet, och <strong>branches</strong> för att utveckla specifik funktionalitet som sedan <strong>mergas</strong> tillbaka in i huvudbranchen ("master").</p>
-<p>I kursens <a href="#kollab">tredje steg</a>, efter att applikationerna är färdigställda, skall ni få testa på Githubs verkliga styrka; möjlighet till <strong>kollaboration</strong>! Här är tanken att ni skall sätta er in i en kurskamrats projekt, <strong>forka</strong> dennes repositorium, göra en liten vidareutveckling/bugfix, och sedan skicka en <strong>pull request</strong>. På samma sätt kommer du själv också få ta ställning till pull requests från kurskamrater, och <strong>merga</strong> in dessa i din kod. Om du tycker ändringen håller måttet, vill säga...</p>
+<p>I kursens <a href="#kollab">fjärde steg</a>, efter att applikationerna är färdigställda, skall ni få testa på Githubs verkliga styrka; möjlighet till <strong>kollaboration</strong>! Här är tanken att ni skall sätta er in i en kurskamrats projekt, <strong>forka</strong> dennes repositorium, göra en liten vidareutveckling/bugfix, och sedan skicka en <strong>pull request</strong>. På samma sätt kommer du själv också få ta ställning till pull requests från kurskamrater, och <strong>merga</strong> in dessa i din kod. Om du tycker ändringen håller måttet, vill säga...</p>
 <p>Målet med Githubanvändningen i kursen är först och främst att ni skall bli någorlunda <strong>vana användare</strong> av det, då Github har blivit mer eller mindre en standard vid större JavaScriptprojekt. Men framför allt hoppas vi också på att ni ser nyttan av det - både vad gäller den smidiga <strong>versionshanteringen</strong>, den enkla <strong>molnbackupen</strong>, och <strong>kollaborationsmöjligheterna</strong>.</p>
 <p>Om Github ger dig mersmak så rekommenderas du att göra din <a href="#deepdive">fördjupning</a> om Github. Här har du en ypperlig chans att grotta ned dig ytterligare i detaljerna!</p>
+
 				<h3 id="backbone">Backbone</h3>
 <img class="logo" src="img/backbone.png" />
-<p>Backbone woo wee!</p>
+<p>Som grund till applikationen kommer vi använda oss av det lilla ramverket <a href="http://www.backbonejs.org">Backbone</a>. Läs igenom det här avsnittet för att se vad Backbone är, och vad detta innebär för ditt applikationsbyggande!
+</p>
+<h4>Varför Backbone?</h4>
+<p>I tidigare iterationer av kursen har studenterna fritt fått välja ramverk, men i år är just Backbone obligatoriskt. Det finns flera anledningar till att vi vill att ni ska smaka på just detta ramverk:</p>
+<ul>
+	<li>Backbone har snabbt uppnått en <strong>stor popularitet</strong>, och är därför något man förväntas känna till.</li>
+	<li>Det är ett ganska <strong>litet</strong> ramverk, och därmed fullt möjligt att bemästra inom ramen för kursen. Den ominifierade, kommenterade källkoden är bara på lite drygt 1000 rader kod.</li>
+	<li>Backbone låter dig <strong>fritt organisera din kod</strong>, vilket är viktigt för kursen - just kodorganisation är något som är extra lurigt vid byggandet av RIA i JavaScript, och därmed något vi vill fokusera på i kursen.</li>
+	<li>Och slutligen så är Backbone <strong>riktigt bra</strong>. :) Den erbjuder just en ryggrad för webappar, genom att tillhandahålla verktyg för kommunikation, datahantering och förmåga att reagera på dataförändringar. Detta är något som alla webbappar behöver, oavsett ras, kön &amp; religion.</li>
+</ul>
+
+<h4>Insticksprogram</h4>
+<p>Som alla ramverk med självrespekt så är Backbone gjort för att <strong>enkelt kunna utökas</strong> via plugins. I fallet med Backbone så är detta extra viktigt, eftersom ramverket bara erbjuder grundläggande funktionalitet, och frestelsen för många utvecklare att bygga ut med mer specifik funktionalitet kommer därmed vara stor.</p>
+<p>Här nedan följer en <strong>lista</strong> på några instick som skulle kunna vara intressanta för kursappen. Det finns <strong>inget tvång</strong> på att använda några plugins i kursen. Om du funderar på att göra din <a href="#deepdive">fördjupning</a> om Backbone så rekommenderas du att använda åtminstone något plugin, eftersom det är ett alldeles utmärkt sätt att lära känna ramverket bättre.</p>
+<ul>
+	<li>localstorage</li>
+	<li>relational</li>
+</ul>
+
+<h4>Resurser</h4>
+<p>moo</p>
+<ul>
+	<li>Officiella hemsidan</li>
+	<li>dokumenterade källkoden!</li>
+	<li>wiki</li>
+	<li>addys bok</li>
+	<li>Den för kursen rekommenderade boken JavaScript Web Applications har ett bra kapitel dedikerat till Backbone, dessutom i kontexten just av byggandet av Web Apps. Därmed utmärkt läsning för att komma igång med Backbone i kursen! Se <a href="#litt">litteratursidan</a> för mer info.</li>
+</ul>
+<p>betalresurser</p>
+<ul>
+	<li>peepcode screencasts</li>
+	<li>recipes with backbone</li>
+</ul>
+
 	<h3>Dokumentation</h3>
 	<p>mdoapsd aopsdm asda</p>
 	<p>dsa das das JSDoc Toolkit</p>
@@ -156,7 +218,7 @@ Kursen tar upp olika bla bla bla. Frivilliga och obligatoriska.
 				<p>
 dlsöa dsa das
 				</p>
-				<h3>Cloud9</h3>
+				<h3 id="c9">Cloud9</h3>
 <img class="logo" src="img/cloud9ide.png" />
 				<p>
 moo moo
@@ -166,5 +228,12 @@ moo moo
 				wuuu
 			</div>
 		</div>
+				<script src="js/jquery-1.7.1-min.js" type="text/javascript" id="jquery">
+		</script>
+				<script src="js/krawnav.js" type="text/javascript">
+		</script>
+				<script src="js/riaweb.js" type="text/javascript">
+		</script>
+
 	</body>
 </html>
