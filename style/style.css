@@ -64,9 +64,10 @@ img.logo, img.book, div.date {
 }
 
 #mainhead {
-	font-weight: bold;
-	font-size: 3em;
+	font-weight: normal;
+	font-size: 2.5em;
 	padding-left: 1em;
+	font-family: 'Lucida Console', monospace;
 }
 
 a.local {
@@ -182,3 +183,11 @@ div.date {
 .krawmenulinkdepth4 { margin-left: 5.6em;}
 .krawmenulinkdepth5 { margin-left: 7em;}
 .krawmenulinkdepth6 { margin-left: 8.4em;} 
+
+
+h1 {margin-left: 50px}
+h2 {margin-left: 75px}
+h3 {margin-left: 100px}
+h4 {margin-left: 125px}
+h5 {margin-left: 150px}
+h6 {margin-left: 175px}
