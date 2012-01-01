@@ -15,12 +15,14 @@ function buildmenusection(branch,depth){
 function setupkrawnav(contentid,navbuttonid,containerid){
 	var tree = krawnav(contentid),
 		menu = "",
-		container = $(containerid).addClass("krawcontentlist");
+		container = $(containerid).addClass("krawcontentlist"),
+		button = $(navbuttonid);
 	tree.forEach(function(branch){
 		menu += buildmenusection(branch,0);
 	});
-	$(navbuttonid).click(function(e){
-		container.toggleClass("krawcontentlistshow")
+	button.click(function(e){
+		container.toggleClass("krawcontentlistshow");
+		button.toggleClass("krawcontentlistshow");
 	});
 	container.html(menu);
 }
