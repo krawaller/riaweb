@@ -55,7 +55,9 @@ img.book {
 	/*margin-left: 4em;*/
 }
 
-img.logo, img.book, div.date {
+img.ppl {height: 140px;}
+
+img.logo, img.book, div.date, img.ppl {
 	float: right;
 	margin-right: 1em;
 	max-width: 150px;
