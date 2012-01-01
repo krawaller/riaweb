@@ -149,13 +149,19 @@ div.date {
 	margin: 1em;
 	border: 1px solid black;
 	background-image: url("../img/foot.png");
-	background-color: #EFEFEF;
+	background-color: #CDCDCD;
 	z-index: 4;
+}
+
+#krawnavbutton:hover {
+	background-color: #EFEFEF;
 }
 
 #krawnavbutton.krawcontentlistshow {
 	border-bottom: none;
 	border-left: none;
+	background-color: transparent;
+	background-color: #EFEFEF;
 }
 
 #krawnavcontainer {
@@ -174,17 +180,23 @@ div.date {
 	text-decoration: none;
 	color: black;
 	font-size: 0.8em;
-	display: inline;
+	display: block;
+	margin-right: 1em;
+	padding-right: 4em;
+}
+
+#krawnavcontainer a.krawmenulink:hover {
+	background-color: #AAA;
 }
 
 #krawnavcontainer a.krawmenulink:hover { text-decoration: underline;}
 
-.krawmenulinkdepth1 { margin-left: 1.4em;}
-.krawmenulinkdepth2 { margin-left: 2.8em;}
-.krawmenulinkdepth3 { margin-left: 4.2em;}
-.krawmenulinkdepth4 { margin-left: 5.6em;}
-.krawmenulinkdepth5 { margin-left: 7em;}
-.krawmenulinkdepth6 { margin-left: 8.4em;} 
+.krawmenulinkdepth1 { padding-left: 1.4em;}
+.krawmenulinkdepth2 { padding-left: 2.8em;}
+.krawmenulinkdepth3 { padding-left: 4.2em;}
+.krawmenulinkdepth4 { padding-left: 5.6em;}
+.krawmenulinkdepth5 { padding-left: 7em;}
+.krawmenulinkdepth6 { padding-left: 8.4em;} 
 
 
 h1 {margin-left: 50px}

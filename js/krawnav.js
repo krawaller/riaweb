@@ -5,7 +5,7 @@ function makeid(text){
 }
 
 function buildmenusection(branch,depth){
-	var html = "<a class='krawmenulink krawmenulinkdepth"+depth+"' href='#"+branch.id+"'>"+branch.text+"</a><br/>";
+	var html = "<a class='krawmenulink krawmenulinkdepth"+depth+"' href='#"+branch.id+"'>"+branch.text+"</a>";
 	branch.subs.forEach(function(subtree){
 		html += buildmenusection(subtree,depth+1);
 	});
