@@ -22,6 +22,7 @@ body {
 	border-left: 1px solid black;
 	border-right: 1px solid black;
 	z-index: 1;
+	position: relative;
 }
 
 ul.krawnav {
@@ -31,6 +32,7 @@ ul.krawnav {
 
 #main {
 	min-height: 400px;
+	position: relative;
 }
 
 #footer {
@@ -72,7 +74,7 @@ a.external {
 	color: green;
 }
 
-a.doclink {
+#main a.doclink {
 text-decoration: none;
 font-size: 0.9em;
 font-weight: bold;
@@ -120,9 +122,50 @@ div.date {
 
 .bg {
 	position: absolute;
+	float: left;
 	top: 0;
 	left: 0;
 	z-index: -1;
 	width: 100%;
 	height: 100%;
 }
+
+#krawnavbutton {
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	top: -0px;
+	right: 0;
+	margin: 1em;
+	border: 1px solid black;
+	background-image: url("../img/nav.jpg");
+	z-index: 4;
+}
+
+#krawnavcontainer {
+	z-index: 3;
+	position: absolute;
+	width: 200px;
+	margin: 1em;
+	padding: 1em;
+	right: -2px;
+	top: -2px;
+	border: 1px solid black;
+	background-color: white;
+}
+
+#krawnavcontainer a.krawmenulink {
+	text-decoration: none;
+	color: black;
+	font-size: 0.8em;
+	display: inline;
+}
+
+#krawnavcontainer a.krawmenulink:hover { text-decoration: underline;}
+
+.krawmenulinkdepth1 { margin-left: 1em;}
+.krawmenulinkdepth2 { margin-left: 2em;}
+.krawmenulinkdepth3 { margin-left: 3em;}
+.krawmenulinkdepth4 { margin-left: 4em;}
+.krawmenulinkdepth5 { margin-left: 5em;}
+.krawmenulinkdepth6 { margin-left: 6em;}

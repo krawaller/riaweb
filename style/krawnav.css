@@ -39,3 +39,11 @@ div.krawsection {
 div.krawsectionactive {
 	display: block;
 }
+
+.krawcontentlist {
+	display: none;
+}
+
+.krawcontentlistshow {
+	display: block;
+}
