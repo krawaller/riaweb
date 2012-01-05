@@ -19,5 +19,8 @@ $(function(){
 			
 		}
 	});
+	$("a.krawmenulinkdepth0:nth-child(n+1)").not("a.krawmenulinkdepth0:first-child").css({
+		borderTop: "1px dashed #777"
+	});
 	
 });

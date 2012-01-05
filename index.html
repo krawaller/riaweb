@@ -121,7 +121,7 @@ För en översikt över de olika stegens deadlines, se kursens <a href="#planeri
 				</p>
 				<p>Klicka på respektive flik för att se en detaljerad redogörelse över exakt vad som förväntas på de olika stegen.</p>
 				<h2 id="intro">
-					0: intro
+					0: Intro
 				</h2>
 				<div class="date">Vecka 4<span>23-29 jan</span></div>
 				<p>
@@ -148,44 +148,49 @@ Hello World! I detta första steg ska du kratta manegen för kursen genom att...
 
 				</p>
 				<h2 id="plan">
-					1: planering
+					1: Planering
 				</h2>
 				<div class="date">Vecka 5-6<span>30 jan - 12 feb</span></div>
-				<p>
-Nu ska du, i samråd med lärare, planera inför kursens genomförande! I och med det så har du ett antal olika beslut att fatta och detaljer att hamra ned, på fyra olika områden:
-				</p>
-<ul><li><strong>Recept</strong> - Vad för program skall du bygga?</li>
-<li><strong>Ingredienser</strong> - Vilka <a href="#aspekter">tekniker och bibliotek</a> vill du använda?</li>
-<li><strong>Tillagning</strong> - Hur skall allt vävas ihop?</li>
-<li><strong>Servering</strong> - Hur skall din applikation tillgängliggöras?</li>
-</ul>
-<p>
-När du genomfört planeringen skall du skriva ett nytt blogginlägg där du för varje rubrik redogör för dina val &amp; dina tankar.
-</p>
-<h3>Recept</h3>
-<p>Vad ska jag bygga? moo moo</p>
-<h3>Ingredienser</h3>
-				<p>Välj vilka <a href="#aspekter">teknologier och aspekter</a> du vill använda i ditt projekt</p>
-				<p>Du skall också redogöra för vilken programvara du tänker använda. Främst vad gäller kodeditor, men också webbläsare &amp; webbläsar-plugins.</p>
-				<p>Om du är nyfiken på att testa något nytt så rekommenderas du att testa <a href="http://c9.io/">Cloud9</a>, en editor som körs direkt i webbläsaren och har integrering mot <a href="#git">Github</a>.</p>
 
-<p>Mooo</p>
-<h3>Tillagning</h3>
-<p>Det är här dina erfarenheter från <a href="http://voyager.lnu.se/tekinet/kurser/Dtt/DT2380/">OOAD-kursen</a> kommer till nytta! För innan vi sätter igång med implementeringen av applikationen, så ska vi <strong>planera</strong> hur de ingående bitarna skall förhålla sig till varandra.</p>
-<p>Detta planeringssteg har alltid varit en självklarhet inom Software Engineering i stort, men just vid byggandet att JavaScriptapplikationer så finns ingen stark tradition, utan här slarvar man ofta.</p>
-<p>Så vad innefattar då att planera sitt program? Det betyder olika saker för olika människor, men här är några tankar om vad som kan ingå:</p>
-<ul>
-<li>En skiss över de olika <strong>states</strong> som applikationen kan ha, ofta kallad <strong>storyboard</strong>. Exemepelvis startskärm, lista över alla objekt, vy över ett enskilt objekt, formulär för uppdatera/skapa ett objekt, och så vidare.</li>
-<li>En <strong>domänmodell</strong> över de ingående objekten. Vilka objekt är det som ingår i modellen, och hur relaterar de till varandra?</li>
-<li><strong>Sekvensdiagram</strong> över programflödet. Vad händer när användaren klickar på att ta bort ett objekt?</li>
-<li>Ett <strong>Klassdiagram</strong> över de ingående datatyperna. Just traditionella "klasser" används ofta inte i JavaScript, så här gör man istället ofta skisser över de JSON-objekt man skickar fram och tillbaka.</li>
-<li>En <strong>modulskiss</strong>, vilket i JavaScript ofta innebär en karta över ett Singleton-objekt. Vilka funktioner behöver jag i min applikation, och hur skall jag sortera dem?</li>
-<li>Eftersom vi alla ska använda Backbone, så kan du redan nu göra en inventering av de olika <strong>Backboneobjekt</strong> du behöver; views, models, collections och routers.</li>
-</ul>
-<p>dsa öasök daölsd kasöd a</p>
-<p>Oavsett hur din planering ser ut, så är det viktiga att den ger dig en god uppfattning om hur applikationen skall struktureras och hur de olika delarna kommer prata med varandra.</p>
-<h3>Servering</h3>
-<p>Bla bla. Om du använder <a href="#node">Node</a> så måste ha lösning för det. Annars smidigast att använda <a href="#git">Github</a> genom att nyttja deras project pages-funktionalitet.</p>
+				<p>Med manegen krattad s&aring; &auml;r det dags att p&aring;b&ouml;rja projektdelen av kursen! Den kommer genomf&ouml;ras i ett antal olika delsteg, detaljerade nedan. Redovisa g&auml;rna dessa med <strong>separata blogginl&auml;gg</strong> för varje del!</p>
+				<p>&Auml;ven om m&aring;nga s&auml;kert vill speeda igenom denna del f&ouml;r att komma fram till kodandet - vi &auml;r ju trots allt programmerare - s&aring; uppmanas ni att <strong>ta er tid</strong> att verkligen fundera &ouml;ver de olika momenten i planeringen. Att strukturera JavaScriptapplikationer &auml;r lurigt, och det &auml;r framf&ouml;r allt dessa f&auml;rdigheter som kursen som helhet vill tillhandah&aring;lla!</p>
+				<h3>Projektval</h3>
+				<p>F&ouml;rst och fr&auml;mst m&aring;ste du best&auml;mma <strong>vad</strong> du skall bygga! F&ouml;ljande punkter kan vara bra att t&auml;nka p&aring;:</p>
+				<ul>
+				<li>F&ouml;r att uppn&aring; l&auml;mplig komplexitet s&aring; m&aring;ste din applikation p&aring; n&aring;got s&auml;tt <strong>hantera data </strong>fr&aring;n anv&auml;ndaren.</li>
+				<li>I n&aring;gon mening m&aring;ste denna data vara <strong>varaktig&nbsp;&ouml;ver sessionen</strong>. En applikation som exempelvis endast omvandlar metriska l&auml;ngder till imperial units &auml;r inte ok, d&aring; all funktionalitet &auml;r &ouml;gonblicklig. D&auml;remot om samma app har en liten sidebar med dina senaste s&ouml;kningar s&aring; uppfyller den detta krav.&nbsp;</li>
+				<li>Det &auml;r ocks&aring; &ouml;nskv&auml;rt att din applikation <strong>sparar data mellan sessioner</strong>&nbsp;(dock inget absolut m&aring;ste p&aring; G-niv&aring;). Detta beh&ouml;ver inte inneb&auml;ra krav p&aring; ett backend, utan det &auml;r helt ok att anv&auml;nda klientsidel&ouml;sningar s&aring;som localStorage.</li>
+				<li>Det faller sig d&aring; ganska naturligt att appen har n&aring;gon sorts <strong>CRUD</strong>; det vill s&auml;ga att anv&auml;ndaren kan skapa, &auml;ndra och ta bort bland objekten.</li>
+				<li>Vi ser ocks&aring; helst att din applikation har <strong>mer &auml;n ett sorts objekt</strong>. Det &auml;r f&ouml;rst n&auml;r olika "klasser" ska interagera med varandra som kraven p&aring; en solid kodorganisering blir tillr&auml;ckligt givande! En kalenderapp d&auml;r man bara kan l&auml;gga in h&auml;ndelser blir d&auml;rmed lite f&ouml;r simpel, men om man l&auml;gger till taggar i mixen, eller har olika typer av h&auml;ndelser, s&aring; uppfyller man kravet!</li>
+				<li>I kursen &auml;r det fokus p&aring; sj&auml;lva byggprocessen, s&aring; resultatet i sig &auml;r inte det som prim&auml;rt &auml;r betygs&auml;ttande. Det &auml;r d&auml;rf&ouml;r viktigt att applikationen <strong>inte har alltf&ouml;r stor omfattning</strong>! P&aring; de tre implementationsveckorna hinner du inte utr&auml;tta alltf&ouml;r stora d&aring;d, men d&auml;remot f&ouml;rhoppningsvis bygga en liten produkt f&ouml;r att testa dina RIA-byggarf&auml;rdigheter. H&aring;ll d&auml;rf&ouml;r nere ambitionsniv&aring;n vad g&auml;ller bredd och funktionalitet i din app!</li>
+				</ul>
+				<h3>Kravspecifikation</h3>
+				<p>Nu n&auml;r du vet vad du skall bygga s&aring; &auml;r det dags att g&ouml;ra en <strong>specifikation</strong> av vad detta inneb&auml;r mer i detalj. Detta beh&ouml;ver inte betyda en fullst&auml;ndig kartl&auml;ggning s&aring;som i OOAD-kursen; huvudkravet &auml;r att n&auml;r man efter att ha l&auml;st din specifikation vet mer eller mindre exakt vad din applikation skall kunna &aring;stadkomma.&nbsp;</p>
+				<p>Vad skall d&aring; kravspecifikationen best&aring; av? H&auml;r f&ouml;ljer n&aring;gra f&ouml;rslag:</p>
+				<ul>
+				<li>Inled g&auml;rna med en simpel&nbsp;<strong>lista &ouml;ver funktionalitet</strong> som du vill ha med.</li>
+				<li>Denna kan sedan f&ouml;rtydligas genom att du skissar en <strong>mockup</strong> &ouml;ver de olika vyer som din app skall best&aring; av.</li>
+				<li>Du kan sedan konkretisera ytterligare via <strong>use cases</strong>, d&auml;r kraven p&aring; applikationen blir tydligare.</li>
+				</ul>
+				<p>Gr&auml;nsen mellan dessa olika kravspecifikationsingredienser &auml;r ofta ganska flytande. Du &auml;r som sagt fri att utforma specifikationen helt efter eget behav, f&ouml;rutsatt att den utg&ouml;r en n&aring;gorlunda l&auml;ttillg&auml;nglig beskrivning &ouml;ver all funktionalitet i din applikation.</p>
+				<h3>Objekt och data</h3>
+				<p>H&auml;rn&auml;st b&ouml;r du <strong>specifiera de ing&aring;ende objekten&nbsp;</strong>i applikationen, b&aring;de vad g&auml;ller egenskaper och faktisk datarepresantion. Det inneb&auml;r...</p>
+				<ul>
+				<li>Ett <strong>klassdiagram </strong>(eller motsvarande)&nbsp;d&auml;r du listar de olika objekten och deras egenskaper, metoder och inb&ouml;rdes relationer.</li>
+				<li>En spec &ouml;ver de olika objektens <strong>JSON-format</strong>, dvs exakt hur datan skall representeras.</li>
+				</ul>
+				<p>Detta f&ouml;r att du h&auml;danefter beh&ouml;ver ha en tydlig id&eacute; om exakt hur datan ser ut som skickas till och fr&aring;n din applikations olika funktioner.</p>
+				<h3>Moduler och funktioner</h3>
+				<p>Nu n&auml;r du vet vilken funktionalitet din applikation str&auml;var efter och hur de ing&aring;ende dataobjekten ser ut s&aring; kan du b&ouml;rja <strong>identifiera de funktioner</strong> som din applikation beh&ouml;ver. En v&auml;ldesignad funktion har ett enda ansvarsomr&aring;de - vi vill inte se monsterfunktioner som har fyra-fem olika uppdrag p&aring; sina axlar! F&ouml;r varje funktion, specifiera vilka argument den tar emot, hur den bearbetar den datan, och vad den returnerar.</p>
+				<p>N&auml;r det g&auml;ller <strong>instansfunktioner</strong>&nbsp;(det vill s&auml;ga funktioner som opererar p&aring; ett enskilt objekt) s&aring; finns det en f&ouml;rdel med att g&ouml;ra dessa som <strong>statiska</strong> funktioner ist&auml;llet - vi kan nu spara ned alla v&aring;ra objekt direkt i en JSON-struktur i databasen, utan att oroa oss f&ouml;r att metoder g&aring;r f&ouml;rlorade.</p>
+				<p>F&ouml;r en extra utmaning, f&ouml;rs&ouml;k h&aring;lla funktionerna <strong>fullst&auml;ndigt portabla</strong> genom att designa dem s&aring; att de endast hanterar sina argument, och inte r&ouml;r n&aring;gra andra variabler eller metoder som finns i samma scope. Hur g&ouml;r man d&aring; om en funktion beh&ouml;ver anv&auml;nda en annan funktion? Man skickar in &auml;ven den andra funktionen som ett argument! Detta m&ouml;nster kallas Dependency Injection. En stor f&ouml;rdel med denna approach &auml;r att de individuella funktionerna blir mycket l&auml;ttare att testa, ifall du v&auml;ljer att arbeta med <a href="#test">unit testing</a>.</p>
+				<p>N&auml;r du v&auml;l har listat de funktioner du beh&ouml;ver s&aring; &auml;r det dags att sortera dessa i <strong>moduler</strong>. Hur kan funktionerna grupperas? F&ouml;rs&ouml;k hitta gemensamma teman och dela upp funktionerna i enlighet med dessa. Varje s&aring;dan grupp blir sedan en modul, vilket i praktiken inneb&auml;r ett JavaScriptobjekt (Singleton).</p>
+				<h3>Kodorganisering</h3>
+				<p>Med funktionerna och modulerna kartlagda s&aring; kan vi zooma ut &auml;nnu ett steg och fundera &ouml;ver <strong>var den h&auml;r koden faktiskt skall bo</strong>. En vanlig approach &auml;r att <strong>varje modul blir en fil</strong>. Varje fil definierar en Singleton, som har sina funktioner som metoder.</p>
+				<p>Det som kr&auml;ver ytterligare lite fundering &auml;r <strong>hur dessa filer skall laddas in</strong> i din applikation. Det vanligaste &auml;r att man direkt l&auml;nkar in dem via script-taggar, men det kr&auml;ver att de olika modulerna vet hur ditt namespace ser ut och var de ska "stoppa in sig sj&auml;lva".&nbsp;</p>
+				<p>En b&auml;ttre approach &auml;r att <strong>h&aring;lla varje modul ovetandes om den st&ouml;rre kontexten</strong>, och ist&auml;llet l&aring;ta dem returnera ett objekt. Den kontext som importerade modulen blir sedan ansvarig f&ouml;r att g&ouml;ra n&aring;got vettigt av det objektet. Precis s&aring; fungerar det i Node, men i "ren JavaScript" finns ingen direkt motsvarighet &auml;nnu. Olika f&ouml;rslag finns dock till n&auml;sta version.&nbsp;</p>
+				<p>Under tiden finns det dock <strong>ett antal olika bibliotek som l&ouml;ser problemet</strong>. En alldeles utm&auml;rkt &ouml;versikt ges i <a href="http://addyosmani.com/writing-modular-js/">denna text</a> av Addy Osmani, som &auml;r mer eller mindre obligatorisk l&auml;sning p&aring; omr&aring;det.</p>
+				<p>Efter detta steg s&aring; har du en fullst&auml;ndig karta &ouml;ver dina olika metoder, i vilka moduler de bor, och hur dessa moduler skall importeras. Med andra ord &auml;r planeringen avklarad, och det &auml;r dags att (&auml;ntligen?) b&ouml;rja koda p&aring; riktigt!</p>
 
 
 				<h2 id="impl">2: Implementering</h2>
@@ -311,7 +316,7 @@ moo moo <a href="http://c9.io/">hemsida</a>
 <img class="logo" src="img/mongodb-logo.png"/>
 <p> och <a href="http://www.mongodb.org/">MongoDB</a> wee moo.</p>
 
-				<h3>Unit Testing</h3>
+				<h3 id="test">Unit Testing</h3>
 				<p>bla bla yada yada BDD TDD wooo!</p>
 				
 				<ul>
