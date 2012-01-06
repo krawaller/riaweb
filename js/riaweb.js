@@ -23,4 +23,7 @@ $(function(){
 		borderTop: "1px dashed #777"
 	});
 	
+	
+	// syntax highlight
+	SyntaxHighlighter.all();
 });

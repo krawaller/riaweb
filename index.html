@@ -7,6 +7,9 @@
 		<meta http-equiv="content-type" content="text/html; charset=utf-8">
 		<link rel="stylesheet" href="style/krawnav.css" type="text/css">
 		<link rel="stylesheet" href="style/style.css" type="text/css">
+		<!-- Syntax Highlighter stylesheets -->
+		<link rel="stylesheet" href="syntaxhighlighter/shCore.css" type="text/css">
+		<link rel="stylesheet" href="syntaxhighlighter/shThemeDefault.css" type="text/css">
 	</head>
 	<body>
 		<div id="wrapper">
@@ -169,14 +172,54 @@ Hello World! I detta första steg ska du kratta manegen för kursen genom att...
 				<p>H&auml;rn&auml;st b&ouml;r du <strong>specifiera de ing&aring;ende objekten&nbsp;</strong>i applikationen, b&aring;de vad g&auml;ller egenskaper och faktisk datarepresantion. Det inneb&auml;r...</p>
 				<ul>
 				<li>Ett <strong>klassdiagram </strong>(eller motsvarande)&nbsp;d&auml;r du listar de olika objekten och deras egenskaper, metoder och inb&ouml;rdes relationer.</li>
-				<li>En spec &ouml;ver de olika objektens <strong>JSON-format</strong>, dvs exakt hur datan skall representeras.</li>
+				<li>En sketch &ouml;ver de olika objektens <strong>JSON-format</strong>, dvs exakt hur datan skall representeras. Eftersom JSON är JavaScriptkod så kan man med fördel skissa just med kod, vilket skulle kunna se ut så här:</li>
 				</ul>
+<pre class="brush: js">
+Address = {
+	street: "Stävgatan 3E", // string
+	zip: 12345, // 5-digit integer
+	city: "Ystad" // string
+}
+
+User = {
+	name: "David Waller", // string with full name
+	age: 32, // integer
+	adress: {} // Adress object
+}
+</pre>
 				<p>Detta f&ouml;r att du h&auml;danefter beh&ouml;ver ha en tydlig id&eacute; om exakt hur datan ser ut som skickas till och fr&aring;n din applikations olika funktioner.</p>
 				<h3>Moduler och funktioner</h3>
-				<p>Nu n&auml;r du vet vilken funktionalitet din applikation str&auml;var efter och hur de ing&aring;ende dataobjekten ser ut s&aring; kan du b&ouml;rja <strong>identifiera de funktioner</strong> som din applikation beh&ouml;ver. En v&auml;ldesignad funktion har ett enda ansvarsomr&aring;de - vi vill inte se monsterfunktioner som har fyra-fem olika uppdrag p&aring; sina axlar! F&ouml;r varje funktion, specifiera vilka argument den tar emot, hur den bearbetar den datan, och vad den returnerar.</p>
+				<p>Nu n&auml;r du vet vilken funktionalitet din applikation str&auml;var efter och hur de ing&aring;ende dataobjekten ser ut s&aring; kan du b&ouml;rja <strong>identifiera de funktioner</strong> som din applikation beh&ouml;ver. En v&auml;ldesignad funktion har ett enda ansvarsomr&aring;de - vi vill inte se monsterfunktioner som har fyra-fem olika uppdrag p&aring; sina axlar! F&ouml;r varje funktion, specifiera vilka argument den tar emot, hur den bearbetar den datan, och vad den returnerar. Precis som med objekten så kan du med fördel göra detta via koddefinitioner. Exempelt nedan har kommentarer av JSDoc-typ, men det funkar givetvis lika bra med fritext.</p>
+<pre class="brush: js">
+/**
+  * @param addr An Address object
+  * @return bool True if all props are ok
+  */
+function validateAddress(addr){
+	// check if all properties are valid 
+}
+
+/**
+  * @param users An array of User objects
+  * @name name A name to match against
+  * @return User* An array of all matching users (empty array if no matches)
+  */
+function findUserByName(users,name){
+	// loop through users and add matches to result
+}
+</pre>
 				<p>N&auml;r det g&auml;ller <strong>instansfunktioner</strong>&nbsp;(det vill s&auml;ga funktioner som opererar p&aring; ett enskilt objekt) s&aring; finns det en f&ouml;rdel med att g&ouml;ra dessa som <strong>statiska</strong> funktioner ist&auml;llet - vi kan nu spara ned alla v&aring;ra objekt direkt i en JSON-struktur i databasen, utan att oroa oss f&ouml;r att metoder g&aring;r f&ouml;rlorade.</p>
 				<p>F&ouml;r en extra utmaning, f&ouml;rs&ouml;k h&aring;lla funktionerna <strong>fullst&auml;ndigt portabla</strong> genom att designa dem s&aring; att de endast hanterar sina argument, och inte r&ouml;r n&aring;gra andra variabler eller metoder som finns i samma scope. Hur g&ouml;r man d&aring; om en funktion beh&ouml;ver anv&auml;nda en annan funktion? Man skickar in &auml;ven den andra funktionen som ett argument! Detta m&ouml;nster kallas Dependency Injection. En stor f&ouml;rdel med denna approach &auml;r att de individuella funktionerna blir mycket l&auml;ttare att testa, ifall du v&auml;ljer att arbeta med <a href="#test">unit testing</a>.</p>
-				<p>N&auml;r du v&auml;l har listat de funktioner du beh&ouml;ver s&aring; &auml;r det dags att sortera dessa i <strong>moduler</strong>. Hur kan funktionerna grupperas? F&ouml;rs&ouml;k hitta gemensamma teman och dela upp funktionerna i enlighet med dessa. Varje s&aring;dan grupp blir sedan en modul, vilket i praktiken inneb&auml;r ett JavaScriptobjekt (Singleton).</p>
+				<p>N&auml;r du v&auml;l har listat de funktioner du beh&ouml;ver s&aring; &auml;r det dags att sortera dessa i <strong>moduler</strong>. Hur kan funktionerna grupperas? F&ouml;rs&ouml;k hitta gemensamma teman och dela upp funktionerna i enlighet med dessa. Varje s&aring;dan grupp blir sedan en modul, vilket i praktiken inneb&auml;r ett JavaScriptobjekt (Singleton). Även dessa kan du med fördel skissa i kod som tidigare:</p>
+<pre class="brush: js">
+// User module, containing all User-related functions
+User = {
+	validateAddress: function(addr){...},
+	findUserByName: function(users,name){...}
+}
+</pre>
+
+
 				<h3>Kodorganisering</h3>
 				<p>Med funktionerna och modulerna kartlagda s&aring; kan vi zooma ut &auml;nnu ett steg och fundera &ouml;ver <strong>var den h&auml;r koden faktiskt skall bo</strong>. En vanlig approach &auml;r att <strong>varje modul blir en fil</strong>. Varje fil definierar en Singleton, som har sina funktioner som metoder.</p>
 				<p>Det som kr&auml;ver ytterligare lite fundering &auml;r <strong>hur dessa filer skall laddas in</strong> i din applikation. Det vanligaste &auml;r att man direkt l&auml;nkar in dem via script-taggar, men det kr&auml;ver att de olika modulerna vet hur ditt namespace ser ut och var de ska "stoppa in sig sj&auml;lva".&nbsp;</p>
@@ -323,12 +366,11 @@ moo moo <a href="http://c9.io/">hemsida</a>
 &copy; Linnéuniversitetet &amp; David Waller 2012
 			</div>
 		</div>
-				<script src="js/jquery-1.7.1-min.js" type="text/javascript" id="jquery">
-		</script>
-				<script src="js/krawnav.js" type="text/javascript">
-		</script>
-				<script src="js/riaweb.js" type="text/javascript">
-		</script>
+		<script src="js/jquery-1.7.1-min.js" type="text/javascript" id="jquery"></script>
+		<script src="js/krawnav.js" type="text/javascript"></script>
+		<script src="syntaxhighlighter/shCore.js" type="text/javascript"></script>
+		<script src="syntaxhighlighter/shBrushJScript.js" type="text/javascript"></script>
+		<script src="js/riaweb.js" type="text/javascript"></script>
 
 	</body>
 </html>
