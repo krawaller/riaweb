@@ -24,6 +24,8 @@ ul.krawnav a {
 	padding-right: 5px;
 	color: black;
 	font-style: italic;
+	font-size: 0.8em;
+	letter-spacing: 1px;
 }
 ul.krawnav a:hover {
 	background-color: #DDD;
