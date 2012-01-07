@@ -23,6 +23,17 @@ $(function(){
 		borderTop: "1px dashed #777"
 	});
 	
+	// init links
+
+	setupkrawnav("#main","#krawnavbutton","#krawnavcontainer");
+	$("#krawnavbutton").show();
+	
+	
+	console.log()
+	$("#nonav").on("click",function(){
+		console.log("SDA");
+		$("body").toggleClass("krawnavsuspend");
+	});
 	
 	// syntax highlight
 	SyntaxHighlighter.all();

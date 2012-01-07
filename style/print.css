@@ -1,0 +1,12 @@
+ul.krawnav, #krawnavbutton, #krawnavcontainer, .bg {
+	display: none;
+}
+
+div.krawsection {
+	display: block;
+}
+
+#wrapper {
+	border: none;
+}
+

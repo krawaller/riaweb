@@ -49,3 +49,11 @@ div.krawsectionactive {
 .krawcontentlistshow {
 	display: block;
 }
+
+body.krawnavsuspend ul.krawnav {
+	display: none;
+}
+
+body.krawnavsuspend div.krawsection {
+	display: block;
+}
