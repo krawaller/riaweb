@@ -252,14 +252,14 @@ h6 {margin-left: 250px}
 	margin-top: -13px;
 	margin-left: 684px;
 	border: 1px solid black;
-	background-image: url("../img/tab.png");
+	background-image: url("../img/tab2.png");
 	background-size: 100%;
 	background-color: #CDCDCD;
 	z-index: 3;
 }
 
 .krawnavsuspend #nonav {
-	background-image: url("../img/tab_remove.png");	
+	background-image: url("../img/tab_remove2.png");	
 }
 
 .krawnavsuspend h1,

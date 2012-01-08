@@ -24,27 +24,39 @@
 				<h1>
 					Information
 				</h1>
-				<h2>Välkommen</h2>
+				<h2>Presentation</h2>
+				<h3>Välkommen</h3>
 <p>...till kurshemsidan för <strong>RIA-utveckling med JavaScript</strong>, en valbar del av det frivilliga tredje året på <a href="http://voyager.lnu.se/tekinet/kurser/dtt/wp/">Webbprogrammeringsprogrammet</a> på Linnéuniversitetet. Här hittar du allt du behöver för att genomföra kursen.</p>
 
 <p><strong>Navigera</strong> i dokumentet genom att klicka på flikarna för att välja rubrik i varje sektion. Du hittar också en <strong>Navigeringsöversikt</strong> i övre högra hörnet.</p>
 
 <p>Om du vill konsumera sidan <strong>utan fliknavigering</strong> kan du växla till att visa hela siten som ett enda dokument, genom att stänga av flikarna via den andra knappen i övre högra hörnet. Du kan också skriva ut sidan, som då kommer printas i sin helhet.</p>
 
+<p>Externa länkar ser ut som den till programhemsidan ovan, och öppnas alla i ett nytt fönster. Interna länkar ser ut <a href="#om">så här</a>. De växlar till en annan tabb. Webbläsarhistoriken bibehålls, så du kan exempelvis använda dess bakåt-knapp för att backa till tidigare tabb.</p>
 
-				<h2>Presentation</h2>
+
+				<h3 id="om">Om kursen</h3>
 
 				<p>Kursen RIA-utveckling med JavaScript syftar till att l&auml;ra ut <strong>best-practices</strong> g&auml;llande just RIA-utveckling med JavaScript. Detta g&ouml;rs genom att - you guessed it - bygger en RIA (Rich Internet Application) i JavaScript!</p>
 				<p>Den st&ouml;rsta delen av kursen handlar om detta bygge. Fokus &auml;r inte p&aring; m&aring;let utan p&aring; <strong>processen</strong>. Applikationens omfattning kommer d&auml;rf&ouml;r vara n&aring;got mindre &auml;n vad ni kanske &auml;r vana vid fr&aring;n andra kurser, just f&ouml;r att ge plats &aring;t p&aring;l&auml;sning, reflektion och diskussion ang&aring;ende <strong>metodiken</strong> i bygget.</p>
+				<p>I bygget får ni testa att använda bibliotek och arbetssätt som är vanliga ute i det vilda. Exempelvis kommer ni bygga projektet med hjälp av ramverket <a href="#backbone">Backbone</a>, och hosta koden på <a href="git">Github</a>.</p>
 				<p>Under arbetets g&aring;ng kommer ni ha regelbunden <strong>handledning av l&auml;rare</strong> &ouml;ver Skype, just f&ouml;r att h&aring;lla diskussionen levande. JavaScript &auml;r ett ovanligt dynamiskt och expressivt spr&aring;k vilket g&ouml;r det v&auml;ldigt kraftfullt, men samtidigt ocks&aring; mindre sj&auml;lvklart hur applikationer b&auml;st konstrueras och kod organiseras.&nbsp;</p>
 				<p>Ni kommer ocks&aring; f&aring; tillf&auml;llen att <strong>diskutera med varandra</strong>, b&aring;de generellt p&aring; kursens forum men ocks&aring; mer direkt via kollaborering i varandras projekt.</p>
 				<p>Kursen avslutas med en <strong>djupdykning</strong> i n&aring;gon av de tekniker eller teknologier ni anv&auml;nt i er applikation. Denna djupdykning resulterar sedan i en presentation som alla kursdeltagare kan ta del av.</p>
 				<p>F&ouml;rhoppningen &auml;r att detta sammantaget kommer ge en god bild av vad det inneb&auml;r att strukturera applikationer i JavaScript, och vilka de b&auml;sta verktygen och metoderna &auml;r!</p>
 
+<h3>Förkunskapskrav</h3>
+<p>Följande kurser, alternativt motsvarande kunskaper, är förkunskapskrav för kursen.</p>
+<ul>
+	<li><a href="http://voyager.lnu.se/tekinet/kurser/dtt/wp_webbintro/">Webbteknisk introduktion</a> - Kunskaper om XHTML och CSS</li>
+	<li><a href="http://voyager.lnu.se/tekinet/kurser/dtt/wp_webbteknik/index.php">Webbteknik I</a> - Kunskaper om JavaScript</li>
+	<li><a href="http://voyager.lnu.se/tekinet/kurser/dtt/1dv402/">Inledande programmering med C#</a> - Kunskaper i objektorienterad programmering</li>
+	<li><a href="http://voyager.lnu.se/tekinet/kurser/Dtt/DT2380/">Objektorienterad analys och design med UML</a> - Kunskaper i UML och design patterns</li>
+</ul>
 
-				<h2>
+				<h3>
 					Kursplan
-				</h2>
+				</h3>
 				<p>
 Den officiella kursplanen hittar du <a href="https://prod.kursinfo.lnu.se/utbildning/GenerateDocument.ashx?code=2Dv407&revision=1&documenttype=pdf&templatetype=coursesyllabus&lang=sv">här</a>.
 				</p>
@@ -156,8 +168,14 @@ Hello World! I detta första steg ska du kratta manegen för kursen genom att...
 
 				<p>Med manegen krattad s&aring; &auml;r det dags att p&aring;b&ouml;rja projektdelen av kursen! Den kommer genomf&ouml;ras i ett antal olika delsteg, detaljerade nedan. Redovisa g&auml;rna dessa med <strong>separata blogginl&auml;gg</strong> för varje del!</p>
 				<p>&Auml;ven om m&aring;nga s&auml;kert vill speeda igenom denna del f&ouml;r att komma fram till kodandet - vi &auml;r ju trots allt programmerare - s&aring; uppmanas ni att <strong>ta er tid</strong> att verkligen fundera &ouml;ver de olika momenten i planeringen. Att strukturera JavaScriptapplikationer &auml;r lurigt, och det &auml;r framf&ouml;r allt dessa f&auml;rdigheter som kursen som helhet vill tillhandah&aring;lla!</p>
+				
+				<h3 id="tools">Verktyg</h3>
+<p>Innan du ger dig in på funderingar om vad du skall bygga, så kan det vara bra att fundera på vilka <a href="#resurser">bibliotek och tekniker</a> du vill använda, eftersom dessa kan påverka vilka spår du slår in på!</p>
+
+<p>Botanisera runt på resurssidan och se vad som kittlar din nyfikenhet! En del saker är obligatoriska (<a href="#backbone">Backbone</a> &amp; <a href="#git">Github</a>), men här finns också några ytterligare frivilliga områden att testa. Givetvis är det också ok att använda bibliotek &amp; tekniker som inte finns listade här!</p>
+
 				<h3>Projektval</h3>
-				<p>F&ouml;rst och fr&auml;mst m&aring;ste du best&auml;mma <strong>vad</strong> du skall bygga! F&ouml;ljande punkter kan vara bra att t&auml;nka p&aring;:</p>
+				<p>Dags att best&auml;mma <strong>vad</strong> du skall bygga! F&ouml;ljande punkter kan vara bra att t&auml;nka p&aring;:</p>
 				<ul>
 				<li>F&ouml;r att uppn&aring; l&auml;mplig komplexitet s&aring; m&aring;ste din applikation p&aring; n&aring;got s&auml;tt <strong>hantera data </strong>fr&aring;n anv&auml;ndaren.</li>
 				<li>I n&aring;gon mening m&aring;ste denna data vara <strong>varaktig&nbsp;&ouml;ver sessionen</strong>. En applikation som exempelvis endast omvandlar metriska l&auml;ngder till imperial units &auml;r inte ok, d&aring; all funktionalitet &auml;r &ouml;gonblicklig. D&auml;remot om samma app har en liten sidebar med dina senaste s&ouml;kningar s&aring; uppfyller den detta krav.&nbsp;</li>
@@ -238,7 +256,7 @@ User = {
 				<h2 id="impl">2: Implementering</h2>
 				<div class="date">Vecka 7-9<span>13 feb - 4 mars</span></div>
 				<p>&Auml;ntligen dags att l&auml;gga ifr&aring;n sig pennan och ladda tangentborden!</p>
-				<h3>Golvgjutning</h3>
+				<h3>Förberedelse</h3>
 				<p>F&ouml;rmodligen &auml;r det mesta av golvet redan lagt. Du har ett repositorium p&aring; Git, och i planeringssteget skapade du n&aring;gon form av skiss &ouml;ver applikationens best&aring;ndsdelar. Men f&ouml;r att komma ig&aring;ng:</p>
 				<ul>
 				<li>B&ouml;rja med att <strong>skapa de filer</strong> som applikationen skall inneh&aring;lla. Om du gjorde din planering i kodskisser s&aring; kan dessa med v&auml;ldigt lite editering tj&auml;na som utg&aring;ngspunkt f&ouml;r dessa!</li>
@@ -275,14 +293,14 @@ User = {
 				<h2 id="eval">5: Utvärdering</h2>
 				<div class="date">Vecka 13<span>26 mars - 1 april</span></div>
 				<p>Kursen, egna insatsen, återknyt till första inlägget &amp; relationen till JavaScript.</p>
-				<h1 id="aspekter">
-					Aspekter
+				<h1 id="resurser">
+					Resurser
 				</h1>
 				<p>
-Kursen tar upp olika bla bla bla. Frivilliga och obligatoriska. I <a href="#plan">planeringssteget</a> ska du välja vilka av dessa du vill använda i kursen.
+Här finns resurser samlade för ett antal olika bibliotek &amp; tekniker relevanta för RIA-byggen. I <a href="#tools">första delen av planeringssteget</a> ska du välja vilka av dessa du vill använda i kursen.
 				</p>
 				<p>
-En av dem skall dessutom senare bli fokus för din <a href="#deepdive">fördjupning</a>.
+Ett av dessa områden kommer senare också bli fokus för din <a href="#deepdive">fördjupning</a>.
 				</p>
 				<h2>Obligatoriska</h2>
 				<p>Dessa koncept är obligatoriska för samtliga.</p>
