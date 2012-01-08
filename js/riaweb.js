@@ -23,15 +23,13 @@ $(function(){
 		borderTop: "1px dashed #777"
 	});
 	
-	// init links
-
-	setupkrawnav("#main","#krawnavbutton","#krawnavcontainer");
-	$("#krawnavbutton").show();
-	
-	
-	console.log()
+	// krawnav
+	var navhtml = setupkrawnav("#main");
+	$("#krawnavbutton").click(function(e) {
+		$("body").toggleClass("krawcontentlistshow");
+	});
+	$("#krawnavcontainer").html(navhtml);
 	$("#nonav").on("click",function(){
-		console.log("SDA");
 		$("body").toggleClass("krawnavsuspend");
 	});
 	

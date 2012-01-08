@@ -28,12 +28,9 @@
 		$.each(tree,function(i,branch) {
 			menu += buildmenusection(branch, 0);
 		});
-		button.click(function(e) {
-			container.toggleClass("krawcontentlistshow");
-			button.toggleClass("krawcontentlistshow");
-		});
-		container.html(menu);
+
 		setInterval(checkHash, 100);
+		return menu;
 	}
 
 

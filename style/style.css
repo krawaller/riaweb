@@ -159,12 +159,15 @@ div.date {
 }
 
 #krawnavbutton {
-	position: absolute;
+	position: fixed;
 	width: 50px;
 	height: 50px;
-	top: -0px;
-	right: 0;
+
 	margin: 1em;
+
+	margin-top: -13px;
+	margin-left: 748px;
+
 	border: 1px solid black;
 	background-image: url("../img/foot.png");
 	background-color: #CDCDCD;
@@ -175,26 +178,39 @@ div.date {
 	background-color: #EFEFEF;
 }
 
-#krawnavbutton.krawcontentlistshow {
-	border-bottom: none;
-	border-left: none;
+body.krawcontentlistshow #krawnavbutton {
+	border: none;
+	border-top: 1px solid black;
+	margin-left: 749px;
 	background-color: transparent;
 }
 
-#krawnavcontainer {
+#krawnavwrapper {
+	display: none;
+}
+
+body.krawcontentlistshow #krawnavwrapper {
+	display: block;
+}
+
+#krawnavwrapper {
 	z-index: 3;
-	position: absolute;
-	width: 200px;
+	position: fixed;
 	margin: 1em;
+	margin-top: -13px;
+	margin-left: 600px;
+	
+	width: 200px;
 	padding: 1em;
-	right: -0px;
-	top: -0px;
 	border: 1px solid black;
 	background-color: #EFEFEF;
 	box-shadow: -10px 10px 5px rgba(0,0,0,0.5);
+	max-height: 550px;
+	overflow-y: scroll;
+	
 }
 
-#krawnavcontainer a.krawmenulink {
+#krawnavwrapper a.krawmenulink {
 	border: none;
 	background: none;
 	text-decoration: none;
@@ -205,11 +221,11 @@ div.date {
 	padding-right: 4em;
 }
 
-#krawnavcontainer a.krawmenulink:hover {
+#krawnavwrapper a.krawmenulink:hover {
 	background-color: #AAA;
 }
 
-#krawnavcontainer a.krawmenulink:hover { text-decoration: underline;}
+#krawnavwrapper a.krawmenulink:hover { text-decoration: underline;}
 
 .krawmenulinkdepth1 { padding-left: 1.4em;}
 .krawmenulinkdepth2 { padding-left: 2.8em;}
@@ -228,12 +244,13 @@ h6 {margin-left: 250px}
 
 
 #nonav {
-	position: absolute;
+/*	position: fixed; */
+	position: fixed;
 	width: 50px;
 	height: 50px;
-	top: -0px;
-	right: 70px;
 	margin: 1em;
+	margin-top: -13px;
+	margin-left: 684px;
 	border: 1px solid black;
 	background-image: url("../img/tab.png");
 	background-size: 100%;
@@ -253,4 +270,8 @@ h6 {margin-left: 250px}
 .krawnavsuspend h6 {
 	margin-top: 2em;
 	margin-bottom: 1em;
+}
+
+.syntaxhighlighter .toolbar {
+	display: none;
 }
