@@ -24,13 +24,17 @@ $(function(){
 	});
 	
 	// krawnav
-	var navhtml = setupkrawnav("#main");
+	var navhtml = setupkrawnav("#main"),
+		body = $("body");
 	$("#krawnavbutton").click(function(e) {
-		$("body").toggleClass("krawcontentlistshow");
+		body.toggleClass("krawcontentlistshow");
 	});
 	$("#krawnavcontainer").html(navhtml);
 	$("#nonav").on("click",function(){
-		$("body").toggleClass("krawnavsuspend");
+		body.toggleClass("krawnavsuspend");
+		if (!body.hasClass("krawnavsuspend")){
+			body.animate({scrollTop:0},200);
+		}
 	});
 	
 	// syntax highlight
