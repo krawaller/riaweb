@@ -275,3 +275,10 @@ h6 {margin-left: 250px}
 .syntaxhighlighter .toolbar {
 	display: none;
 }
+
+div.krawpath {
+	border-top: 1px solid #DDD;
+	padding-left: 1em;
+	background-color: #EEE;
+	margin-bottom: -1.9em;
+}

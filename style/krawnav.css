@@ -57,3 +57,11 @@ body.krawnavsuspend ul.krawnav {
 body.krawnavsuspend div.krawsection {
 	display: block;
 }
+
+div.krawpath {
+	display: none;
+}
+
+body.krawnavsuspend div.krawpath {
+	display: block;
+}

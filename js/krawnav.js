@@ -35,9 +35,10 @@
 
 
 
-	function krawnav(frag, depth) {
+	function krawnav(frag, depth, path) {
 		frag = $(frag || "body");
 		depth = depth || 1;
+		path = path || [];
 		var headings = $("h" + depth, frag),
 			navid = id++,
 			arr = [];
@@ -55,8 +56,9 @@
 			arr.push({
 				id: el.id,
 				text: headtext,
-				subs: krawnav(el, depth + 1)
+				subs: krawnav(el, depth + 1, path.concat(["<a href='#"+el.id+"' class='krawlink krawpathlink'>"+headtext+"</a>"]))  // recursion call3
 			});
+//			$el.prepend("<div class='krawpath'>"+path.join(" &rarr; ")+" &rarr; </div>");
 		});
 		html += "</ul>";
 		frag.find(".krawsection:first").before(html);
