@@ -282,3 +282,11 @@ div.krawpath {
 	background-color: #EEE;
 	margin-bottom: -1.9em;
 }
+
+#studentstable {
+	margin-left: 4em;
+}
+
+#studentstable td {
+	padding-left: 10px;
+}
