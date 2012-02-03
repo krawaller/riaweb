@@ -103,6 +103,13 @@ $(function(){
 		gitrepo: "ria"
 	},{
 		firstname: "Martin",
+		lastname: "Cedeskog",
+		blogurl: "http://cedeskog.com/",
+		blogfeed: "http://cedeskog.com/?feed=rss2",
+		gituser: "c3der",
+		gitrepo: "contactme"
+	},{
+		firstname: "Martin",
 		lastname: "Svanström",
 		blogurl: "http://ms22xh.wordpress.com/",
 		blogfeed: "http://ms22xh.wordpress.com/feed/",
